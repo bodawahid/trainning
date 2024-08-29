@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SocialController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -11,3 +12,8 @@ Route::middleware('verified')->get('/home', [App\Http\Controllers\HomeController
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/redirect/{service}',
+[SocialController::class,'redirect'])->name('facebook.login'); 
+
+Route::get('/auth/{service}/callback',
+[SocialController::class,'callback'])->name('facebook.callback'); 

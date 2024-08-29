@@ -50,6 +50,10 @@
                                     <button type="submit" class="btn btn-primary">
                                         {{ __('Register') }}
                                     </button>
+                                    <div class="col-md-8 offset-md-5 mt-2">
+                                        <a href="{{ route('facebook.login', 'facebook') }}">
+                                            {{ __('Login With FaceBook') }}</a>
+                                    </div>
                                 </div>
                             </div>
                         </form>
