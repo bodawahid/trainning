@@ -12,9 +12,9 @@
                             @csrf
 
                             <div class="row mb-3">
-                                <label for="email"
-                                    class="col-md-4 col-form-label text-md-end">{{ __('Mobile Phone') }}</label>
-                                <x-input name="mobile_phone" />
+                                <label for="identify"
+                                    class="col-md-4 col-form-label text-md-end">{{ __('Email or Mobile Phone') }}</label>
+                                <x-input name="identify" />
                             </div>
 
                             <div class="row mb-3">
