@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Offer;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\OfferRequest;
 use App\Models\Offer;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class OfferController extends Controller
     public function index()
     {
         $offers =  Offer::all();
-        return view('offers.index');
+        return view('offers.index', compact('offers'));
     }
 
     /**
@@ -28,11 +29,8 @@ class OfferController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(OfferRequest $request)
     {
-        $rules = $this->getRules();
-        $messages = $this->getMessages();
-        $request->validate($rules, $messages);
         Offer::create($request->toArray());
         return redirect()->route('offers.index')->with('success', 'offer is created successfully');
     }
@@ -70,20 +68,5 @@ class OfferController extends Controller
         //
     }
     // helper functions for rules and error messages .
-    protected function getRules()
-    {
-        return [
-            'name' => 'required|min:3|max:100|unique:offers,name',
-            'description' => 'required|min:5|string',
-            'price' => 'required|numeric|decimal:2',
-        ];
-    }
-    protected function getMessages()
-    {
-        return [
-            'name.required' => __('offers.name.required'),
-            'description.required' => __('offers.description.required'),
-            'price.required' =>  __('offers.price.required'),
-        ];
-    }
+
 }
