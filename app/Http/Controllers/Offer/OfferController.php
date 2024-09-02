@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\OfferRequest;
 use App\Models\Offer;
 use Illuminate\Http\Request;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class OfferController extends Controller
 {
@@ -14,7 +15,7 @@ class OfferController extends Controller
      */
     public function index()
     {
-        $offers =  Offer::all();
+        $offers =  Offer::select('id', 'name_' . LaravelLocalization::getCurrentLocale() . ' as name', 'description_' . LaravelLocalization::getCurrentLocale() . ' as description', 'price', 'features_' . LaravelLocalization::getCurrentLocale() . ' as features')->get();
         return view('offers.index', compact('offers'));
     }
 

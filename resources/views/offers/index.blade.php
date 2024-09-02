@@ -17,16 +17,22 @@
         </div>
     @endif
     <div class="container mt-5">
-        <div class="table-responsive" style="text-align: {{ config('app.locale') == 'en' ? 'left' : 'right' }}">
-            <h2 class="mb-4">{{ __('offers.Offer') }}</h2>
+        <div style="text-align: {{ config('app.locale') == 'en' ? 'right' : 'left' }}">
+            <a href="{{ route('offers.create') }}"><button
+                    class="btn btn-sm btn-outline-primary">{{ __('offers.Offer Create') }}
+                </button></a>
+        </div>
+        <h2 class="mb-4" style="text-align: {{ config('app.locale') == 'en' ? 'left' : 'right' }}">
+            {{ __('offers.Offer') }}</h2>
+        <div class="table-responsive">
             <table class="table table-striped table-hover">
                 <thead class="table-dark">
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">{{ __('offers.Offer Name') }}</th>
-                        <th scope="col">{{ __('offers.Offer Description') }}</th>
+                        <th scope="col">{{ __('offers.Offer Name '.ucfirst(LaravelLocalization::getCurrentLocale())) }}</th>
+                        <th scope="col">{{ __('offers.Offer Description '.ucfirst(LaravelLocalization::getCurrentLocale())) }}</th>
                         <th scope="col">{{ __('offers.Offer Price') }}</th>
-                        <th scope="col">{{ __('offers.Offer Features') }}</th>
+                        <th scope="col">{{ __('offers.Offer Features '.ucfirst(LaravelLocalization::getCurrentLocale())) }}</th>
                     </tr>
                 </thead>
                 <tbody>
