@@ -20,10 +20,10 @@ class SocialController extends Controller
     {
         $user = Socialite::driver($service)->stateless()->user();
         $userrev = User::where('email', $user->email);
-        $new_user = $userrev->first() ; 
+        $new_user = $userrev->first();
         if ($userrev->count() and $new_user->name != $user->name) {
             $userrev->update(['name' => $user->name]);
-        } elseif(!$userrev->count()) {
+        } elseif (!$userrev->count()) {
             $new_user = User::create([
 
                 'name' => $user->name,
