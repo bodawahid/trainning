@@ -1,17 +1,19 @@
 <?php
 
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\Offer\OfferController;
 use App\Http\Controllers\SocialController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
-Auth::routes(['verify' => true]);
 
 Route::group([
     'prefix' => LaravelLocalization::setLocale(),
     'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
 ], function () {
+    Route::get('youtube/video', [EventController::class, 'index'])->middleware('auth');
+    Auth::routes(['verify'  => true]);
     Route::resource('/offers', OfferController::class);
 });
 

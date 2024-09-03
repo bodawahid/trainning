@@ -7,6 +7,7 @@ return [
     'price.required' => 'Price Field is Required',
     'Offer' => 'Offers',
     'Offer Create' => 'Create Offer',
+    'Offer Edit' => 'Edit Offer',
     'Offer Name Ar' => 'Arabic Name',
     'Offer Name En' => 'English Name',
     'Offer Description Ar' => 'Arabic Description',
@@ -15,5 +16,12 @@ return [
     'Offer Features Ar' => 'Arabic Features',
     'Offer Features En' => 'English Features',
     'submit' => 'Create',
+    'Update' => 'Update',
+    'Delete' => 'Delete',
+    'Home' => 'Home',
+    "Enter" => 'Enter',
+    'Offer Image' => 'Offer Image',
+    'youtube'=>'Number of Views is '
+
 
 ];

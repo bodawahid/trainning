@@ -7,6 +7,7 @@ return [
     'price.required' => 'حقل السعر مطلوب',
     'Offer' => 'العروض',
     'Offer Create' => 'إنشاء عرض',
+    'Offer Edit' => 'تعديل عرض',
     'Offer Name Ar' => 'الاسم بالعربى',
     'Offer Name En' => 'الاسم بالانجليزى',
     'Offer Description Ar' => 'التفاصيل بالعربى',
@@ -14,6 +15,12 @@ return [
     'Offer Price' => 'السعر',
     'Offer Features Ar' => 'المزايا بالعربى',
     'Offer Features En' => 'المزايا بالانجليزى',
-    'submit' => 'إنشاء' ,
+    'submit' => 'إنشاء',
+    'Update' => 'تعديل',
+    'Delete' => 'حذف',
+    'Home' => 'الرئيسية',
+    'Enter' => 'ادخل',
+    "Offer Image" => 'صورة العرض',
+    'youtube' => 'عدد المشاهدات هو ',
 
 ];

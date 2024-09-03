@@ -4,23 +4,19 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __('Login') }}</div>
-
+                <div class="card" style="text-align: {{ config('app.locale') == 'en' ? 'left' : 'right'}}">
+                    <div class="card-header">{{ __('auth.Login') }}</div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
 
                             <div class="row mb-3">
-                                <label for="identify"
-                                    class="col-md-4 col-form-label text-md-end">{{ __('Email or Mobile Phone') }}</label>
-                                <x-input name="identify" />
+                                <x-input name="identify" type="text" label="{{ __('auth.Email or Mobile Phone') }}" />
                             </div>
 
                             <div class="row mb-3">
-                                <label for="password"
-                                    class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-                                <x-input name="password" />
+                               
+                                <x-input name="password" type="password" label="{{ __('auth.Password') }}" />
                             </div>
 
                             <div class="row mb-3">
@@ -30,7 +26,7 @@
                                             {{ old('remember') ? 'checked' : '' }}>
 
                                         <label class="form-check-label" for="remember">
-                                            {{ __('Remember Me') }}
+                                            {{ __('auth.Remember Me') }}
                                         </label>
                                     </div>
                                 </div>

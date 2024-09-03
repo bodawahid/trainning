@@ -22,11 +22,12 @@ class OfferRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name_ar' => 'required|min:3|max:100|unique:offers,name_ar',
-            'name_en' => 'required|min:3|max:100|unique:offers,name_en',
+            'name_ar' => 'required|min:3|max:100',
+            'name_en' => 'required|min:3|max:100',
             'description_ar' => 'required|min:5|string',
             'description_en' => 'required|min:5|string',
-            'price' => 'required|numeric|decimal:2',
+            'image' => 'nullable|image|max:1048576|dimensions:min_height:100,min_width:100',
+            'price' => 'required|numeric',
             'feature_ar' => 'nullable|string|min:3|max:200',
             'feature_en' => 'nullable|string|min:3|max:200',
         ];
