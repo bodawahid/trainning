@@ -21,7 +21,13 @@ return [
     'Home' => 'Home',
     "Enter" => 'Enter',
     'Offer Image' => 'Offer Image',
-    'youtube'=>'Number of Views is '
+    'youtube' => 'Number of Views is ',
+    'Offer Trash' => 'Offer Trash',
+    'Force Delete' => 'Force Delete',
+    'Restore' => 'Restore',
+    'No Offers' => 'No Offers Found Here',
+
+
 
 
 ];

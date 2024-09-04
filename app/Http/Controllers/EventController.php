@@ -11,8 +11,9 @@ class EventController extends Controller
     public function index()
     {
         $video = Video::first();
-        // event(new VisitYoutube($video));
-        $video->update(['view' => $video->view +  1]);
+        // dd($video) ;
+        event(new VisitYoutube($video));
+        // $video->update(['view' => $video->view +  1]);
         return view('event.youtube', compact('video'));
     }
 }

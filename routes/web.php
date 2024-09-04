@@ -14,6 +14,9 @@ Route::group([
 ], function () {
     Route::get('youtube/video', [EventController::class, 'index'])->middleware('auth');
     Auth::routes(['verify'  => true]);
+    Route::delete('offers/{offer}/forceDelete', [OfferController::class, 'forceDelete'])->name('offers.force.delete');
+    Route::get('offers/{offer}/restore', [OfferController::class, 'restore'])->name('offers.restore');
+    Route::get('offers/trash', [OfferController::class, 'trash'])->name('offers.trash');
     Route::resource('/offers', OfferController::class);
 });
 

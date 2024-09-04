@@ -50,4 +50,9 @@ class User extends Authenticatable implements MustVerifyEmail
             'password' => 'hashed',
         ];
     }
+    // many to many relation ship with the videos table 
+    public function videos()
+    {
+        return $this->belongsToMany(Video::class, 'user_video', 'user_id', 'video_id', 'id', 'id');
+    }
 }

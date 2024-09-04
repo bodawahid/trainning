@@ -22,5 +22,10 @@ return [
     'Enter' => 'ادخل',
     "Offer Image" => 'صورة العرض',
     'youtube' => 'عدد المشاهدات هو ',
+    'Offer Trash' => 'العروض المحذوفة',
+    'Force Delete' => 'حذف نهائيا',
+    'Restore' => 'استعادة',
+    'No Offers' => 'لا يوجد عروض هنا',
+
 
 ];

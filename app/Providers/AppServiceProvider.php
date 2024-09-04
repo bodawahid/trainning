@@ -23,8 +23,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Event::listen(
-            VisitYoutube::class,
-            // IncreaseViews::class,
+            // VisitYoutube::class, 
+            IncreaseViews::class,
         );
     }
 }
