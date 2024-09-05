@@ -14,9 +14,9 @@
         'image' => '',
         'identify' => '',
         'password' => '',
-        'name'=> '', 
-        'email'=>'', 
-        'mobile_phone'=>'' ,
+        'name' => '',
+        'email' => '',
+        'mobile_phone' => '',
     ],
     'accept' => '',
 ])

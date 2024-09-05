@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\Offer\OfferController;
 use App\Http\Controllers\SocialController;
@@ -7,6 +8,12 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
+
+// ajax controller 
+Route::get('ajax/{offer}/update',[AjaxController::class,'edit'])->name('ajax.edit') ;
+Route::post('ajax/update', [AjaxController::class, 'ajaxUpdate'])->name('ajax.update');
+Route::resource('ajax/offers/', AjaxController::class);
+Route::post('ajax/destroy', [AjaxController::class, 'delete'])->name('ajax.destroy');
 
 Route::group([
     'prefix' => LaravelLocalization::setLocale(),

@@ -12,7 +12,6 @@ trait OfferTrait
         if ($request->hasFile('image')) {
             $extension =  $request->image->getClientOriginalExtension();
             $file_name = time() . '.' . $extension;
-            $path  = 'images/offers';
             $request->image->move($path, $file_name);
             $data['image'] = $file_name;
         }
