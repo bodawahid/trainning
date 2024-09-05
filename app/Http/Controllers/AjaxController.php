@@ -69,14 +69,14 @@ class AjaxController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function ajaxUpdate(Request $request)
+    public function ajaxUpdate(OfferRequest $offerRequest)
     {
-        $offer = Offer::findOrFail($request->id);
-        if ($offer->image and  $request->image) {
+        $offer = Offer::findOrFail($offerRequest->id);
+        if ($offer->image and  $offerRequest->image) {
             File::delete(public_path('images/offers/' . $offer->image));
         }
         $path = 'images/offers';
-        $data = $this->getImageWithData($request, $path);
+        $data = $this->getImageWithData($offerRequest, $path);
         $offer->update($data);
         if ($offer) {
             return response()->json([

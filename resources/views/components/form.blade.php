@@ -48,7 +48,7 @@
                 @method('put')
             @endif
             {{-- to send only the id --}}
-            <input name="id" type="text" value="{{ $value->id }}" hidden>
+            <input name="id" type="text" value="{{ $value['id'] }}" hidden>
             <x-input name="name_ar" label="{{ __('offers.Offer Name Ar') }}" :value="$value" />
             <x-input name="name_en" label="{{ __('offers.Offer Name En') }}" :value="$value" />
             <x-input name="description_ar" label="{{ __('offers.Offer Description Ar') }}" :value="$value" />

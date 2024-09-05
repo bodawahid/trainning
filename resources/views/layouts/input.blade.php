@@ -26,10 +26,13 @@
         name="{{ $name }}" for="{{ $label }}" step="{{ $step }}"
         value="{{ old($name, $value["$name"]) }}" autocomplete="{{ $name }}"
         placeholder="{{ __('offers.Enter') . " $label" }}" accept="{{ $accept }}">
-
-    @error($name)
+    {{-- not using ajax --}}
+    {{-- @error($name)
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
         </span>
-    @enderror
+    @enderror --}}
+    {{-- using ajax --}}
+    <div class="text text-danger error" id="{{ $name . '-error' }}" role="alert">
+    </span>
 </div>

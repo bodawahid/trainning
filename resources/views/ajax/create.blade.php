@@ -18,9 +18,17 @@
                         // alert(response.msg);
                     }
                 },
-                error: function(response) {
-                    if (response.status)
-                        alert('failed');
+                error: function(xhr) {
+                    if (xhr.status === 422) {
+                        var errors = xhr.responseJSON.errors;
+                        // Clear previous errors
+                        $('.error').text('');
+                        // Display validation errors
+                        $.each(errors, function(key, value) {
+                            $('#' + key + '-error').html(value[
+                                0]); // Display first error for each field
+                        });
+                    }
                 }
             });
         });
